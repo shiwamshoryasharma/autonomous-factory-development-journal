@@ -62,6 +62,6 @@ This is where the contributions of the teams came together. The respective machi
 
 On the robot, I had spent more time getting pickup to behave in simulation than on the physical arm. Across the factory, the balance flipped. Running the real printer, robots, CNC and AMR as one system was the hardest part. We finished that integration with the help of all the machine teams. What I'm proudest of is the work between their machines. The printer team could make a part, the robot could take it, the CNC team could change it and the AMR team could move it. My job was to make those steps belong to the same job from beginning to end.
 
-## Prototype release
+## My Work flow documention release
 
-We plan to make the prototype public once the patent is granted.
+I want to make the journal documentation public after the patent is awarded. There, you can see some images and videos outcomes, but not the whole output. 
