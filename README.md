@@ -1,16 +1,18 @@
 # Building an autonomous factory digital twin
 
-*Developer journal · November 2025 – October 2026*
+*Developer journal · July 2024 – October 2026*
 
-On July 15, I could look down at an orange workpiece and see daylight on either side of it, between the part and the gripper jaws. Three days later, a view from table height made a different question easy to ask. Were the jaws low enough to pick it up? I keep coming back to those two attempts because they explain much of what it was like to develop this prototype. Both views helped. Neither one recorded a pickup.
+The Accenture-sponsored autonomous factory project began in 2022. I joined in July 2024, and this journal follows my work through October 2026. Many images from my earlier work are unavailable on this machine. The earliest screenshot I have on this machine is from November 2025.
 
-We set out to follow a part through printing, robot handling, CNC machining and mobile transport in an Accenture-sponsored autonomous factory project. An operator should be able to ask where the part is, which machine has it and what it is waiting for. Those sound like ordinary questions until two machines are moving, a viewer has just reconnected and the same job has already been tried once.
+On July 15, 2026, I could look down at an orange workpiece and see daylight on either side of it, between the part and the gripper jaws. Three days later, a view from table height made a different question easy to ask. Were the jaws low enough to pick it up? I keep coming back to those two attempts because they explain much of what it was like to develop this prototype. Both views helped. Neither one recorded a pickup.
+
+We set out to follow a part through printing, robot handling, CNC machining and mobile transport in the same factory. An operator should be able to ask where the part is, which machine has it and what it is waiting for. Those sound like ordinary questions until two machines are moving, a viewer has just reconnected and the same job has already been tried once.
 
 This journal brings together two records: what we could see during individual tests, and what I remember building with the machine teams. The code in the résumé prototype is a small testing layer. The wider project had a different implementation, and some of the most important decisions came after we had already invested time in an approach.
 
 ## The development timeline
 
-The dated entries below come from our testing notebook. The four phases follow the engineering decisions; several teams worked on their machines at the same time.
+The four phases trace decisions we made across teams, often in parallel. The dated test entries draw on the images available here from November 2025 through October 2026.
 
 > **◆　PHASE 01　·　Teaching the robot**<br>
 > **[01　The training cells](#one-arm-and-two-tables)** — One arm and two tables became a repeated Isaac Lab environment for object-detection-based pick-and-place.<br>
@@ -30,7 +32,7 @@ The dated entries below come from our testing notebook. The four phases follow t
 
 ## One arm and two tables
 
-On November 3 there was one robot arm between two worktables. Four days later, several copies of the cell occupied the same scene. Those tables and repeated robots belonged to our first Isaac Lab experiment. We created a model to teach the robot pick-and-place using object detection. The repeated cells make much more sense when you know what we were trying to teach.
+The November 3, 2025 screenshot shows one robot arm between two worktables. Four days later, several copies of the cell occupied the same scene. Those tables and repeated robots belonged to our first Isaac Lab experiment. We created a model to teach the robot pick-and-place using object detection. The repeated cells make much more sense when you know what we were trying to teach.
 
 At that point the teaching problem and the factory problem still seemed close. A camera mounted on the robot arm was part of how we expected the robot to find its target. If you had seen only those early scenes, you could reasonably have assumed the work that followed was a matter of refining that model and adding more stations. The project took a different turn.
 
@@ -38,7 +40,7 @@ At that point the teaching problem and the factory problem still seemed close. A
 
 The project criteria changed and we introduced a new architecture. We dropped the earlier teaching approach. The revised robot design removed the arm-mounted camera and the object-detection step that depended on it. The underlying requirement survived the change: the robot still needed to pick up an object whose position could vary. That was the expensive part of the pivot. We had lost an assumption that the first model was built around, and still owed the factory the same capability.
 
-By January, the arm was reaching toward a machine enclosure. The opening gave the wrist and tool a much smaller region to pass through. Looking only at the tip was misleading. It could appear to reach the desired point while the wrist still occupied space we needed to inspect near the machine wall.
+By January 2026, the arm was reaching toward a machine enclosure. The opening gave the wrist and tool a much smaller region to pass through. Looking only at the tip was misleading. It could appear to reach the desired point while the wrist still occupied space we needed to inspect near the machine wall.
 
 In March, we had an RViz planning view with the robot, its current state, a goal and the planning settings together. Another attempt placed the arm beside a round table and exposed part of the graph driving the scene. I could ask a more precise question of each attempt. Which pose was the planner being asked to reach? Where did the tool appear relative to the tabletop? A snapshot of the planning panel could answer the first question. Establishing clearance throughout the approach would require the trajectory between the poses as well.
 
